@@ -10,10 +10,6 @@ api.secret_key='saksham'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 
 api.add_resource(ArtistList,'/artists')
 api.add_resource(Artist,'/artist/<string:name>')
